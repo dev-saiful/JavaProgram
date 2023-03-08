@@ -1,25 +1,29 @@
 
-package OOP;
-
+import ExceptioHandling.Box;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args)
-    {
-//        Student st = new Student();
-//        st.name = "Saiful";
-//        st.age = 23;
-//        st.id = 2001019037;
-//        st.dept = "CSE";
-//        
-//        System.out.println("Student info : ");
-//        System.out.println("Name : "+st.name + " Age : "+st.age+" ID : "+st.dept+st.id+" Department : "+st.dept);
-        CreditCard  card1 = new  CreditCard(345);
-        card1.setLimit(5000);
-        card1.buyWithCredit(500);
-        card1.buyWithCredit(1500);
-      
-        card1.buyWithCredit(15000);
-        
-        
+
+    public static void main(String[] args) {
+        try {
+            int arr[] = new int[5];
+            arr[2] = 6;
+            System.out.println(arr[2]);
+            Scanner sc = new Scanner(System.in);
+            double h, w, d;
+            h = sc.nextDouble();
+            w = sc.nextDouble();
+            d = sc.nextDouble();
+            Box box1 = new Box(h, w, d);
+            box1.result();
+        } catch (ArithmeticException err1) {
+            System.out.println(err1);
+        } catch (InputMismatchException err2) {
+            System.out.println(err2);
+        } catch (ArrayIndexOutOfBoundsException err) {
+            System.out.println(err);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
